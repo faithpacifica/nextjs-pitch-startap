@@ -5,14 +5,9 @@ export default function Home() {
 		<>
 			<section className="pink_container bg-pinkRose pattern">
 				<h1 className="heading">
-					Pitch Your Startup, <br />
-					Connect with Entrepreneurs
+					Pitch Your Startup, <br/>Connect with Entrepreneurs
 				</h1>
-				<p className="sub-heading !max-w-3xl">
-					Submit Ideas, Vote on Pitches, and Get Noticed in Virtual Competitions
-				</p>
-
-        
+        <p className="sub-heading"></p>
 			</section>
 		</>
 	);

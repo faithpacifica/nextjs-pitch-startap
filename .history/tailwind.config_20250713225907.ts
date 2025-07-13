@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
@@ -9,13 +8,12 @@ const config: Config = {
     "./sanity/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    // Completely override the colors object
     colors: {
-      // primary: {
-      //   100: "#FFE8F0",
-      //   DEFAULT: "#EE2B69",
-      // },
-      // secondary: "#FBE843",
+      primary: {
+        100: "#FFE8F0",
+        DEFAULT: "#EE2B69",
+      },
+      secondary: "#FBE843",
       black: {
         100: "#333333",
         200: "#141413",
@@ -32,7 +30,7 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        "work-sans": ["var(--font-work-sans)", ...defaultTheme.fontFamily.sans],
+        "work-sans": ["var(--font-work-sans)"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -48,7 +46,7 @@ const config: Config = {
         xs: "475px",
       },
     },
-  },
+  }
   plugins: [
     require("tailwindcss-animate"),
     require("@tailwindcss/typography"),

@@ -11,11 +11,11 @@ const config: Config = {
   theme: {
     // Completely override the colors object
     colors: {
-      // primary: {
-      //   100: "#FFE8F0",
-      //   DEFAULT: "#EE2B69",
-      // },
-      // secondary: "#FBE843",
+      primary: {
+        100: "#FFE8F0",
+        DEFAULT: "#EE2B69",
+      },
+      secondary: "#FBE843",
       black: {
         100: "#333333",
         200: "#141413",

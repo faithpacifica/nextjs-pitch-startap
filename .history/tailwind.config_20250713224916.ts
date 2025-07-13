@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
@@ -9,30 +8,29 @@ const config: Config = {
     "./sanity/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    // Completely override the colors object
-    colors: {
-      // primary: {
-      //   100: "#FFE8F0",
-      //   DEFAULT: "#EE2B69",
-      // },
-      // secondary: "#FBE843",
-      black: {
-        100: "#333333",
-        200: "#141413",
-        300: "#7D8087",
-        DEFAULT: "#000000",
+  extend:{
+      colors: {
+        primary: {
+          100: "#FFE8F0",
+          DEFAULT: "#EE2B69",
+        },
+        secondary: "#FBE843",
+        black: {
+          100: "#333333",
+          200: "#141413",
+          300: "#7D8087",
+          DEFAULT: "#000000",
+        },
+        white: {
+          100: "#F7F7F7",
+          DEFAULT: "#FFFFFF",
+        },
+        transparent: "transparent",
+        current: "currentColor",
+        inherit: "inherit",
       },
-      white: {
-        100: "#F7F7F7",
-        DEFAULT: "#FFFFFF",
-      },
-      transparent: "transparent",
-      current: "currentColor",
-      inherit: "inherit",
-    },
-    extend: {
       fontFamily: {
-        "work-sans": ["var(--font-work-sans)", ...defaultTheme.fontFamily.sans],
+        "work-sans": ["var(--font-work-sans)"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -46,9 +44,14 @@ const config: Config = {
       },
       screens: {
         xs: "475px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
     },
-  },
+  }
   plugins: [
     require("tailwindcss-animate"),
     require("@tailwindcss/typography"),

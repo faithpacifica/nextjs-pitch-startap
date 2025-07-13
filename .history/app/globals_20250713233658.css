@@ -9,8 +9,8 @@
 	}
 }
 @theme {
-	--color-pinkRose: #ee2b69 !important;
-	--color-yellow: #fbe843 !important;
+	--color-pinkRose: #EE2B69!important;
+	--color-yellow:#FBE843 !important;
 	--font-work-sans: 'Work Sans', sans-serif;
 }
 
@@ -52,7 +52,7 @@
 
 .tag {
 	@apply bg-yellow px-6 py-3  font-bold rounded-sm uppercase relative;
-} /*tag-tri*/
+}  /*tag-tri*/
 
 .heading {
 	@apply uppercase bg-black px-6 py-3 font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5;
@@ -207,7 +207,7 @@
 	);
 	background-size: 5% 100%;
 	background-position: center;
-	background-repeat: repeat-x
+	background-repeat: repeat-x;
 }
 
 .tag-tri {
@@ -217,3 +217,5 @@
 .w-md-editor-toolbar {
 	padding: 10px !important;
 }
+
+

@@ -205,7 +205,7 @@
 		rgba(251, 232, 67, 0.6) 50.5%,
 		transparent 50.5%
 	);
-	background-size: 5% 100%;
+	background-size: 5% 0%;
 	background-position: center;
 	background-repeat: repeat-x
 }

@@ -202,7 +202,7 @@
 		to right,
 		transparent 49.5%,
 		rgba(251, 232, 67, 0.2) 49.5%,
-		rgba(251, 232, 67, 0.6) 50.5%,
+		/* rgba(251, 232, 67, 0.6) 50.5%, */
 		transparent 50.5%
 	);
 	background-size: 5% 100%;

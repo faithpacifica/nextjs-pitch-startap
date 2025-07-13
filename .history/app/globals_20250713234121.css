@@ -206,8 +206,8 @@
 		transparent 50.5%
 	);
 	background-size: 5% 100%;
-	background-position: center;
-	background-repeat: repeat-x
+	/* background-position: center; */
+	background-repeat: repeat-x;
 }
 
 .tag-tri {

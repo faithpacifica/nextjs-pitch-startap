@@ -12,6 +12,10 @@
 	--color-pinkRose: #ee2b69 !important;
 	--color-yellow: #fbe843 !important;
 	--font-work-sans: 'Work Sans', sans-serif;
+	--color-black-100: #333 !important;
+	--color-black-def: #000 !important;
+	--color-white-100:#F7F7F7 !important;
+	--color-white-def:#FFF !important;
 }
 
 .flex-between {
@@ -121,16 +125,16 @@
 	} */
 
 .search-form {
-	@apply max-w-3xl w-full min-h-[80px] bg-white border-[5px] border-black rounded-[80px] text-[24px] mt-8 px-5 flex flex-row items-center gap-5;
+	@apply max-w-3xl w-full min-h-[80px] bg-white-100 border-[5px] border-black-def rounded-[80px] text-[24px] mt-8 px-5 flex flex-row items-center gap-5;
 }
 
-/* .search-input {
-		@apply flex-1 font-bold placeholder:font-semibold placeholder:text-black-100 w-full h-auto outline-none;
-	} */
+.search-input {
+	@apply flex-1 font-bold placeholder:font-semibold placeholder:text-black-100 w-full h-auto outline-none;
+}
 
-/* .search-btn {
-		@apply size-[50px] rounded-full bg-black flex justify-center items-center !important;
-	}  */
+.search-btn {
+	@apply size-[50px] rounded-full bg-black-def flex justify-center items-center;
+}
 
 /* .startup-card {
 		@apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-200 hover:border-primary transition-all duration-500 hover:shadow-300 hover:bg-primary-100;
@@ -158,7 +162,7 @@
 }
 
 .startup-form {
-	@apply max-w-2xl mx-auto bg-white my-10 space-y-8 px-6;
+	@apply max-w-2xl mx-auto bg-white-def my-10 space-y-8 px-6;
 }
 
 .startup-form_label {
@@ -207,7 +211,7 @@
 	);
 	background-size: 5% 100%;
 	background-position: center;
-	background-repeat: repeat-x
+	background-repeat: repeat-x;
 }
 
 .tag-tri {

@@ -3,7 +3,7 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 
-@layer base {
+@layer StartupTypeCard {
 	:root {
 		--radius: 0.5rem;
 	}
@@ -117,9 +117,9 @@
 	@apply bg-zinc-400 h-10 w-24 rounded-lg fixed bottom-3 right-3;
 }
 
-/* .avatar {
-		@apply p-0 focus-visible:ring-0 bg-none rounded-full drop-shadow-md !important;
-	} */
+.avatar {
+		@apply p-0 focus-visible:ring-0 bg-none rounded-full drop-shadow-sky-500;
+	}
 
 /* .dropdown-menu {
 		@apply w-56 border-[5px] border-black bg-white p-5 rounded-2xl !important;

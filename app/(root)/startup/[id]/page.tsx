@@ -8,7 +8,7 @@ import markdownit from 'markdown-it';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import View from '@/components/View';
-
+import avatar from '../../../assets/avatar.png'
 const md = markdownit();
 export const experimental_ppr = true;
 
@@ -23,14 +23,14 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 	return (
 		<>
 			<section className="pink_container !min-h-[230px]">
-				<p className="tag">{formatDate(post?._createdAt)}</p>
+				<p className="tag tag-tri">{formatDate(post?._createdAt)}</p>
 				<h1 className="heading">{post.title}</h1>
 				<p className="sub-heading !max-w-5xl">{post.description}</p>
 			</section>
 
 			<section className="section_container">
 				<img
-					src={post.image}
+					src={post?.image}
 					alt="thumbnail"
 					className="w-full h-auto rounded-xl"
 				/>
@@ -38,20 +38,20 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 				<div className="space-y-5 mt-10 max-w-4xl mx-auto">
 					<div className="flex-between gap-5">
 						<Link
-							href={`/user/${post.author?._id}`}
+							href={`/user/${post?.author?._id}`}
 							className="flex gap-2 items-center mb-3"
 						>
 							<Image
-								src={post.author.image}
+								src={post.author?.image || avatar}
 								alt="avatar"
 								width={64}
 								height={64}
 								className="rounded-full drop-shadow-lg"
 							/>
 							<div>
-								<p className="text-20-medium">{post.author.name}</p>
+								<p className="text-20-medium">{post.author?.name}</p>
 								<p className="text-16-medium !text-black-300">
-									@{post.author.username}
+									@{post.author?.username}
 								</p>
 							</div>
 						</Link>

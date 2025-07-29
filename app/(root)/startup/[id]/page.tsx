@@ -8,7 +8,8 @@ import markdownit from 'markdown-it';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import View from '@/components/View';
-import avatar from '../../../assets/avatar.png'
+import avatar from '../../../assets/avatar.png';
+
 const md = markdownit();
 export const experimental_ppr = true;
 
@@ -22,7 +23,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
 	return (
 		<>
-			<section className="pink_container !min-h-[230px]">
+			<section className="pattern pink_container !min-h-[230px]">
 				<p className="tag tag-tri">{formatDate(post?._createdAt)}</p>
 				<h1 className="heading">{post.title}</h1>
 				<p className="sub-heading !max-w-5xl">{post.description}</p>
@@ -30,9 +31,9 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
 			<section className="section_container">
 				<img
-					src={post?.image}
+					src={post?.image || ''}
 					alt="thumbnail"
-					className="w-full h-auto rounded-xl"
+					className="w-full max-h-150 rounded-xl"
 				/>
 
 				<div className="space-y-5 mt-10 max-w-4xl mx-auto">
@@ -58,7 +59,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
 						<p className="category-tag">{post.category}</p>
 					</div>
-					<h3 className="text-30bold">Pitch Details</h3>
+					<h3 className="text-30-bold">Pitch Details</h3>
 					{parsedContent ? (
 						<article
 							className="prose max-w-4xl font-work-sans break-all"
@@ -72,14 +73,13 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 				<hr className="divider" />
 
 				{/* TODO:Editor Selected Startups */}
+			</section>
 
-				</section>
+			{/* PPR implement */}
 
-				{/* PPR implement */}
-
-				<Suspense fallback={<Skeleton className='view_skeleton'/>}>
+			<Suspense fallback={<Skeleton className="view_skeleton" />}>
 				<View id={id} />
-				</Suspense>
+			</Suspense>
 		</>
 	);
 };

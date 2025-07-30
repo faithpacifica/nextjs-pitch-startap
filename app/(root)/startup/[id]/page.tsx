@@ -11,7 +11,7 @@ import View from '@/components/View';
 import avatar from '../../../assets/avatar.png';
 
 const md = markdownit();
-export const experimental_ppr = true;
+// export const experimental_ppr = true;
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 	const id = (await params).id;
@@ -30,11 +30,13 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 			</section>
 
 			<section className="section_container">
-				<img
-					src={post?.image || ''}
-					alt="thumbnail"
-					className="w-full max-h-150 rounded-xl"
-				/>
+				{post?.image && (
+					<img
+						src={post.image}
+						alt="thumbnail"
+						className="w-full max-h-150 rounded-xl"
+					/>
+				)}
 
 				<div className="space-y-5 mt-10 max-w-4xl mx-auto">
 					<div className="flex-between gap-5">

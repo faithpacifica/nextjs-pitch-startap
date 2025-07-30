@@ -26,7 +26,7 @@
 		"clsx": "^2.1.1",
 		"lucide-react": "^0.525.0",
 		"markdown-it": "^14.1.0",
-		"next": "15.3.5",
+		"next": "^15.4.2-canary.20",
 		"next-auth": "^5.0.0-beta.29",
 		"next-sanity": "^9.12.3",
 		"react": "^19.0.0",

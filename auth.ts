@@ -12,9 +12,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 			clientSecret: process.env.AUTH_GITHUB_SECRET!,
 		}),
 	],
-  //after successful athentication:
+  //after successful authentication:
 	callbacks: {
-		// to check wether our user already exists in our DB or not and then depending on that to create
+		// to check weather our user already exists in our DB or not and then depending on that to create
 		async signIn({ user: { name, email, image }, profile }) {
 			if (!profile) return false;
 			const { id, login, bio } = profile as { id: string; login: string; bio?: string };

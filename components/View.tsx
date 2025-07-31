@@ -12,7 +12,7 @@ const View = async ({ id }: { id: string }) => {
 	writeClient
 		.patch(id)
 		.setIfMissing({ views: 0 })
-		.inc({ views: 1 }) // cleaner than totalViews + 1
+		.inc({ views: 1 }) 
 		.commit()
 		.catch((err) => console.error('Failed to update views:', err));
 

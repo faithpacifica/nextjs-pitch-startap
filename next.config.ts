@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
 		dangerouslyAllowSVG: true,
 		remotePatterns: [{ protocol: 'https', hostname: '*' }],
 	},
-	experimental: {
-		ppr: 'incremental',
-	},
+	// experimental: {
+	// 	ppr: 'incremental',
+	// },
 	devIndicators: {
 		appIsrStatus: true,
 		buildActivity: true,

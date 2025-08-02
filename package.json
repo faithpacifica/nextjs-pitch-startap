@@ -12,20 +12,26 @@
 		"typegen": "sanity schema extract --path=./sanity/extract.json && sanity typegen generate"
 	},
 	"packageManager": "npm@10.5.2",
+	"overrides": {
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.2.3",
 		"@sanity/image-url": "^1.1.0",
 		"@sanity/vision": "^3.99.0",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.1.11",
+		"@uiw/react-md-editor": "^4.0.8",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
+		"easymde": "^2.20.0",
 		"lucide-react": "^0.525.0",
 		"markdown-it": "^14.1.0",
 		"next": "^15.4.2-canary.27",
 		"next-auth": "^5.0.0-beta.29",
 		"next-sanity": "^9.12.3",
-		"react": "^19.1.1",
+		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
 		"sanity": "^3.99.0",
 		"sanity-plugin-markdown": "^5.1.2",

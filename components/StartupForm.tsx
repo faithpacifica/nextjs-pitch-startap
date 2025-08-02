@@ -2,9 +2,15 @@
 import React, { useState } from 'react';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
+import MDEditor from '@uiw/react-md-editor';
+import { Button } from "@/components/ui/button";
+import { Send } from "lucide-react";
 
 const StartupForm = () => {
 	const [errors, setErrors] = useState<Record<string, string>>({});
+
+	const [pitch, setPitch] = useState('**Hello**');
+
 	return (
 		<form action={() => {}} className="startup-form">
 			<div>
@@ -55,23 +61,52 @@ const StartupForm = () => {
 				)}
 			</div>
 
-      
-      <div>
-        <label htmlFor="link" className="startup-form_label">
-          Image URL
-        </label>
-        <Input
-          id="link"
-          name="link"
-          className="startup-form_input"
-          required
-          placeholder="Startup Image URL"
-        />
+			<div>
+				<label htmlFor="link" className="startup-form_label">
+					Image URL
+				</label>
+				<Input
+					id="link"
+					name="link"
+					className="startup-form_input"
+					required
+					placeholder="Startup Image URL"
+				/>
 
-        {errors.link && <p className="startup-form_error">{errors.link}</p>}
-      </div>
-      
-			
+				{errors.link && <p className="startup-form_error">{errors.link}</p>}
+			</div>
+
+			{/* Markdown */}
+			<div data-color-mode="light">
+				<label htmlFor="pitch" className="startup-form_label">
+					Pitch
+				</label>
+
+				<MDEditor
+					value={pitch}
+					id="pitch"
+					preview="edit"
+					height={300}
+					style={{ borderRadius: 20, overflow: 'hidden' }}
+					textareaProps={{
+						placeholder:
+							'Briefly describe your idea and what problem it solves',
+					}}
+					previewOptions={{
+						disallowedElements: ['style'],
+					}}
+					onChange={(value) => setPitch(value as string)}
+				/>
+				{errors.pitch && <p className="startup-form_error">{errors.pitch}</p>}
+			</div>
+			{/* <Button
+				type="submit"
+				className="startup-form_btn text-white"
+				disabled={isPending}
+			>
+				{isPending ? 'Submitting...' : 'Submit Your Pitch'}
+				<Send className="size-6 ml-2" />
+			</Button> */}
 		</form>
 	);
 };

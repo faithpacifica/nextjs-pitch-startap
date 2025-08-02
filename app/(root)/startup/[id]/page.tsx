@@ -11,7 +11,7 @@ import View from '@/components/View';
 import avatar from '../../../assets/avatar.png';
 
 const md = markdownit();
-// export const experimental_ppr = true;
+export const experimental_ppr = true;
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 	const id = (await params).id;

@@ -71,6 +71,7 @@ const StartupForm = () => {
         {errors.link && <p className="startup-form_error">{errors.link}</p>}
       </div>
       
+			
 		</form>
 	);
 };

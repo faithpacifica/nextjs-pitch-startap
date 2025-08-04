@@ -3,82 +3,83 @@
 import React, { useState, useActionState } from 'react';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import MDEditor  "@uiw/react-md-editor";
+import MDEditor from '@uiw/react-md-editor';
 import { Button } from '@/components/ui/button';
 import { Send } from 'lucide-react';
 
-import { formSchema } from "../lib/validations";
-import { z } from "zod";
-import { useToast } from "../hooks/use-toast";
-import { useRouter } from "next/navigation";
-import { createPitch } from "../lib/actions/createPitch";
+import { formSchema } from '../lib/validations';
+import { z } from 'zod';
+import { useToast } from '../hooks/use-toast';
+import { useRouter } from 'next/navigation';
+import { createPitch } from '../lib/actions';
 
 const StartupForm = () => {
 	const [errors, setErrors] = useState<Record<string, string>>({});
 
 	const [pitch, setPitch] = useState('');
-  const { toast } = useToast();
-  const router = useRouter();
-	
-  const handleFormSubmit = async (prevState: any, formData: FormData) => {
-    try {
-      const formValues = {
-        title: formData.get("title") as string,
-        description: formData.get("description") as string,
-        category: formData.get("category") as string,
-        link: formData.get("link") as string,
-        pitch,
-      };
+	const { toast } = useToast();
+	const router = useRouter();
 
-      await formSchema.parseAsync(formValues);
+	const handleFormSubmit = async (prevState: any, formData: FormData) => {
+		try {
+			const formValues = {
+				title: formData.get('title') as string,
+				description: formData.get('description') as string,
+				category: formData.get('category') as string,
+				link: formData.get('link') as string,
+				pitch,
+			};
 
-      const result = await createPitch(prevState, formData, pitch);
+			await formSchema.parseAsync(formValues);
 
-      if (result.status == "SUCCESS") {
-        toast({
-          title: "Success",
-          description: "Your startup pitch has been created successfully",
-        });
+			const result = await createPitch(prevState, formData, pitch);
+			console.log(result);
 
-        router.push(`/startup/${result._id}`);
-      }
+			if (result.status == 'SUCCESS') {
+				toast({
+					title: 'Success',
+					description: 'Your startup pitch has been created successfully',
+				});
 
-      return result;
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const fieldErorrs = error.flatten().fieldErrors;
+				router.push(`/startup/${result._id}`);
+			}
+			return result;
+		} catch (error) {
+			if (error instanceof z.ZodError) {
+				const fieldErorrs = error.flatten().fieldErrors;
 
-        setErrors(fieldErorrs as unknown as Record<string, string>);
+				setErrors(fieldErorrs as unknown as Record<string, string>);
 
-        toast({
-          title: "Error",
-          description: "Please check your inputs and try again",
-          variant: "destructive",
-        });
+				toast({
+					title: 'Error',
+					description: 'Please check your inputs and try again',
+					variant: 'destructive',
+				});
 
-        return { 
-					...prevState, 
-					error: "Validation failed", 
-					status: "ERROR" };
-      }
-      toast({
-        title: "Error",
-        description: "An unexpected error has occurred",
-        variant: "destructive",
-      });
+				return {
+					...prevState,
+					error: 'Validation failed',
+					status: 'ERROR',
+				};
+			}
+			toast({
+				title: 'Error',
+				description: 'An unexpected error has occurred',
+				variant: 'destructive',
+			});
 
-      return {
-        ...prevState,
-        error: "An unexpected error has occurred",
-        status: "ERROR",
-      };
-    }
-  };
+			return {
+				...prevState,
+				error: 'An unexpected error has occurred',
+				status: 'ERROR',
+			};
+		}
+	};
 
-  const [state, formAction, isPending] = useActionState(handleFormSubmit, {
-    error: "",
-    status: "INITIAL",
-  });
+	const [state, formAction, isPending] = useActionState(handleFormSubmit, {
+		error: '',
+		status: 'INITIAL',
+	});
 
 	return (
 		<form action={formAction} className="startup-form">
@@ -98,11 +99,11 @@ const StartupForm = () => {
 			{/* DESCRIPTION */}
 			<div>
 				<label htmlFor="description" className="startup-form_label">
-					Descriptiom
+					Description
 				</label>
 				<Textarea
 					id="description"
-					name="title"
+					name="description"
 					className="startup-form_textarea"
 					required
 					placeholder="Startup Description"
@@ -164,7 +165,7 @@ const StartupForm = () => {
 					previewOptions={{
 						disallowedElements: ['style'],
 					}}
-					onChange={(value:string) => setPitch(value as string)}
+					onChange={(value) => setPitch(value as string)}
 				/>
 				{errors.pitch && <p className="startup-form_error">{errors.pitch}</p>}
 			</div>

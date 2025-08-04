@@ -23,6 +23,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
 		image,
 		description,
 	} = post;
+	console.log(post ,"post")
 
 	return (
 		<li className="startup-card group">
@@ -39,7 +40,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
 						<p className="text-16-medium line-clamp-1">{author?.name}</p>
 					</Link>
 					<Link href={`/startup/${_id}`}>
-						<h3 className="text-26-semibold line-clamp-1"></h3>
+						<h3 className="text-26-semibold line-clamp-1">{title}</h3>
 					</Link>
 				</div>
 				<Link href={`/user/${author?._id}`}>
@@ -55,7 +56,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
 			<Link href={`/startup/${_id}`}>
 				<p className="startup-card_desc">{description}</p>
 
-				<img src={image} alt="placeholder" className="startup-card_img" />
+				<img src={image  || '/placeholder.png'} alt="placeholder" className="startup-card_img" />
 			</Link>
 
 			<div className="flex-between gap-3 mt-5">

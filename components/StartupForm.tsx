@@ -33,7 +33,7 @@ const StartupForm = () => {
 			await formSchema.parseAsync(formValues);
 
 			const result = await createPitch(prevState, formData, pitch);
-			console.log(result);
+			// console.log(result);
 
 			if (result.status == 'SUCCESS') {
 				toast({

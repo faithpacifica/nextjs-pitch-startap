@@ -10,17 +10,18 @@ export default async function Home({
 	searchParams: Promise<{ query?: string }>;
 }) {
 	const query = (await searchParams).query;
-	const params = {search:query || null};
+	// const params = {search:query || null};
+	const params: Record<string, string> = { search: query || '' }; 
 
 	const session =await auth();
 	console.log(session?.id,'session')
 
 
-	const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY,params });
+	const { data: posts } = await sanityFetch({ query: STARTUPS_QUERY, params });
 
 	return (
 		<>
-			<section className="pink_container bg-pinkRose pattern">
+			<section className="pink_container  pattern">
 				<h1 className="heading">
 					Pitch Your Startup, <br />
 					Connect with Entrepreneurs

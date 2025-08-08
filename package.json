@@ -20,6 +20,7 @@
 		"@radix-ui/react-slot": "^1.2.3",
 		"@sanity/image-url": "^1.1.0",
 		"@sanity/vision": "^3.99.0",
+		"@sentry/nextjs": "^10.3.0",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.1.11",
 		"@uiw/react-md-editor": "^4.0.8",

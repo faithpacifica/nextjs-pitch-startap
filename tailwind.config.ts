@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
+import typographyPlugin from "@tailwindcss/typography";
 
 const config: Config = {
   content: [
@@ -50,8 +51,7 @@ const config: Config = {
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/typography"),
+      typographyPlugin,
   ],
 };
 

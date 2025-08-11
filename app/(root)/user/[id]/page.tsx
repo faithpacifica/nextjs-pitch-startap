@@ -8,7 +8,7 @@ import Image from "next/image";
 import UserStartups from "@/components/UserStartups";
 import { Suspense } from "react";
 import StartupCardSkeleton from "@/components/StartupCardSkeleton";
-
+import avatar from "../../../assets/avatar.png";
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
@@ -32,8 +32,8 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
           </div>
 
           <Image
-            src={user.image || ""}
-            alt={user.name || '' }
+            src={user.image || avatar}
+            alt={user.name || 'User name' }
             width={220}
             height={220}
             className="profile_image"

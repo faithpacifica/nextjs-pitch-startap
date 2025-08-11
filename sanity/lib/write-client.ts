@@ -7,7 +7,7 @@ import { apiVersion, dataset, projectId ,token} from '../env'
 export const writeClient = createClient({
   projectId,
   dataset,
-  apiVersion: '2025-01-01', 
+  apiVersion,
   token,
   useCdn: false, // Set to false if statically generating pages, using ISR or tag-based revalidation
 })

@@ -31,10 +31,13 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
 			<section className="section_container">
 				{post?.image && (
-					<img
+					<Image
 						src={post.image}
 						alt="thumbnail"
+						width={800}
+						height={400}
 						className="w-full max-h-150 rounded-xl"
+						style={{ objectFit: 'cover' }}
 					/>
 				)}
 

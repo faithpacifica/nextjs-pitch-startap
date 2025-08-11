@@ -1,10 +1,10 @@
 import React from "react";
 import { client } from "@/sanity/lib/client";
-import { STARTUP_BY_ID_QUERY } from "../sanity/lib/queries";
-import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
+import {STARTUPS_BY_AUTHOR_QUERY } from "../sanity/lib/queries";
+import StartupCard, {StartupTypeCard } from "@/components/StartupCard";
 
 const UserStartups = async ({ id }: { id: string }) => {
-  const startups = await client.fetch(STARTUP_BY_ID_QUERY, { id });
+  const startups = await client.fetch(STARTUPS_BY_AUTHOR_QUERY, { id });
 
   return (
     <>
